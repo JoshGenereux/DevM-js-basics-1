@@ -8,14 +8,14 @@ const user = readline.createInterface({
 const greeting = "Welcome User!"
 const instructions = "New password must consist of:\n" +
                         "at least 1 number,\none upper case character,\n" +
-                        "one special character," +
-                        "and must be no shorter than 10 characters,\n" +
+                        "one special character,\n" +
+                        "must be no shorter than 10 characters,\n" +
                         "and no longer than 25 characters.";
 console.log("\x1b[32m",greeting)
 console.log("\x1b[36m",instructions)
 
-user.question("Please enter a new password\n", function (input){
-    let userPass = input;
+user.question("\nPlease enter a new password\n", function (input){
+    input = input.trim();
     let length = input.length >= 10 && input.length <= 25;
     const matches = /[!@#$%^&*]/;
     const upperCase = /[A-Z]/;
